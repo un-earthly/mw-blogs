@@ -33,8 +33,8 @@ export default function BlogCard({ blog }) {
                     />
 
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
-                        <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                            <ArrowUpRight />
+                        <div className="transform translate-y-8 p-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all bg-white/80 rounded-full duration-300">
+                            <ArrowUpRight className="h-20 w-20" />
                         </div>
                     </div>
 
