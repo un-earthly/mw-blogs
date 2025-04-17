@@ -1,5 +1,3 @@
-import Button from "./Button";
-
 const BlogHero = () => {
   return (
     <>

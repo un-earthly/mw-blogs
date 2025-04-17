@@ -1,4 +1,18 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import CategoryBtn from "./CategoryBtn";
+import BlogCard from "./BlogCard";
+
 const AllBlogs = () => {
+  const [categories, setCategories] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://hr.mediusware.xyz/api/website/blogs/categories/')
+      .then(res => { setCategories(res.data); console.log(res) })
+    axios.get('https://hr.mediusware.xyz/api/website/blogs/')
+      .then(res => { setBlogs(res.data.results); console.log({ res2: res }) })
+  }, [])
   return (
     <div className="container">
       <div className="flex items-center justify-between gap-3 md:flex-row flex-col">
@@ -7,37 +21,14 @@ const AllBlogs = () => {
         </p>
       </div>
       <div className="flex items-center flex-wrap justify-center gap-4 sm:py-12 py-5">
+
         <div>
-          <button
-            className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-3xl text-white bg-[#0060AF]  `}
-          >
-            All{" "}
-            <span
-              className={`px-[6px] py-1  rounded-lg ms-1  text-[#008F79] bg-[#EAECF0] h-[20px] `}
-            >
-              10
-            </span>
-          </button>
+          {categories?.map((c) => <CategoryBtn category={c} key={c.id} />)}
         </div>
         <div>
-          <button
-            className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-3xl bg-white`}
-          >
-            Frontend{" "}
-            <span className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px] `}>
-              5
-            </span>
-          </button>
-        </div>
-        <div>
-          <button
-            className={` sm:py-[11px] py-1  sm:px-6 px-4 border rounded-3xl bg-white`}
-          >
-            Node.js{" "}
-            <span className={`px-[6px] py-1  rounded-lg ms-1 bg-[#EAECF0] h-[20px]`}>
-              5
-            </span>
-          </button>
+          {
+            blogs?.map(b => <BlogCard key={b.id} blog={b}></BlogCard>)
+          }
         </div>
       </div>
     </div>
