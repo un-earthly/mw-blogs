@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useMemo } from "react";
 import CategoryBtn from "./CategoryBtn";
 import BlogCard from "./BlogCard";
+import LoadingSpinner from "./Loader";
 
 const filterEmptyCategories = (blogs) => {
   return blogs.filter(b => b.total_blog !== 0);
@@ -69,7 +70,7 @@ const AllBlogs = () => {
   }, []);
 
   const renderCategories = useMemo(() => {
-    if (loading.categories) return <p>Loading categories...</p>;
+    if (loading.categories) return <LoadingSpinner text="Fetching categories..." size={20} />;
     if (error.categories) return <p className="text-red-500">{error.categories}</p>;
 
     return (
@@ -85,7 +86,7 @@ const AllBlogs = () => {
   }, [categories, loading.categories, error.categories]);
 
   const renderBlogs = () => {
-    if (loading.blogs) return <p>Loading blogs...</p>;
+    if (loading.blogs) return <div className="flex items-center justify-center"><LoadingSpinner text="Loading blogs..." /></div>;
     if (error.blogs) return <p className="text-red-500">{error.blogs}</p>;
     if (blogs.length === 0) return <p>No blogs found.</p>;
 
