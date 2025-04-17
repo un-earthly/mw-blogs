@@ -75,7 +75,7 @@ const AllBlogs = () => {
     return (
       <>
         <div>
-          <button className="sm:py-[11px] py-1 sm:px-6 px-4 border rounded-xl bg-white">
+          <button className="sm:py-[11px] text-white bg-primary-1 py-1 sm:px-6 px-4 border rounded-xl ">
             All
           </button>
         </div>
@@ -89,13 +89,13 @@ const AllBlogs = () => {
     if (error.blogs) return <p className="text-red-500">{error.blogs}</p>;
     if (blogs.length === 0) return <p>No blogs found.</p>;
 
-    return blogs.map(b => <BlogCard key={b.id} blog={b} />);
+    return <div className="grid grid-cols-3 gap-8 ">{blogs.map(b => <BlogCard key={b.id} blog={b} />)}</div>
   };
 
   return (
     <div className="container">
       <div className="flex items-center justify-between gap-3 md:flex-row flex-col">
-        <p className="sm:text-[48px] text-2xl mx-auto leading-8 font-bold">
+        <p className="sm:text-[48px] text-2xl mx-auto leading-8 font-bold ">
           All <span className="text-[#00A88E]"> Blogs</span>
         </p>
       </div>

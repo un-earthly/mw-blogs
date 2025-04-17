@@ -39,24 +39,24 @@ export default function ContactForm() {
 
                 <div>
                     <div className="flex flex-wrap gap-4 mb-12">
-                        <div className="bg-white/10 rounded-lg p-5 w-28">
-                            <h3 className="text-2xl font-bold">10+</h3>
+                        <div className="bg-white rounded-lg p-5 w-28">
+                            <h3 className="text-2xl text-primary-3 font-bold">10+</h3>
                             <p className="text-cyan-400 text-sm">Years in business</p>
                         </div>
 
-                        <div className="bg-white/10 rounded-lg p-5 w-28">
-                            <h3 className="text-2xl font-bold">100+</h3>
+                        <div className="bg-white rounded-lg p-5 w-28">
+                            <h3 className="text-2xl text-primary-3 font-bold">100+</h3>
                             <p className="text-cyan-400 text-sm">In-house employees</p>
                         </div>
 
-                        <div className="bg-white/10 rounded-lg p-5 w-36">
-                            <h3 className="text-2xl font-bold">250+</h3>
+                        <div className="bg-white rounded-lg p-5 w-36">
+                            <h3 className="text-2xl text-primary-3 font-bold">250+</h3>
                             <p className="text-cyan-400 text-sm">Successful delivery project</p>
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-2">
+                    <div className="flex gap-4">
+                        <div className="flex flex-col items-center gap-2">
                             <span className="font-bold">Clutch</span>
                             <div className="flex">
                                 <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -65,13 +65,16 @@ export default function ContactForm() {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-col items-center gap-2">
                             <span className="font-bold">Top Rated Plus</span>
-                            <span className="text-green-400">Upwork</span>
                             <div className="flex">
-                                <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                                <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                                <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+
+                                <span className="text-green-400">Upwork</span>
+                                <div className="flex">
+                                    <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                    <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                    <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                </div>
                             </div>
                         </div>
                     </div>
