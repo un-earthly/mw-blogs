@@ -13,11 +13,9 @@ const AllBlogs = () => {
   const [loading, setLoading] = useState({ categories: true, blogs: true });
   const [error, setError] = useState({ categories: null, blogs: null });
 
-  // Pagination URLs
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [prevPageUrl, setPrevPageUrl] = useState(null);
 
-  // Fetch blogs from any page
   const fetchBlogs = async (url) => {
     try {
       setLoading(prev => ({ ...prev, blogs: true }));
